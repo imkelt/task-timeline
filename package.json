@@ -17,7 +17,7 @@
     "todo",
     "markdown"
   ],
-  "author": "Tony",
+  "author": "imkelt",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.12.12",

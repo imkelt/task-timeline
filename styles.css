@@ -1,0 +1,96 @@
+/*
+Task Timeline 1.0.0
+
+The plugin adds .tt-date-wrap and .tt-tasks-wrap to the completed note
+in Reading view. Styling is intentionally scoped to those runtime classes,
+so it does not depend on a specific Obsidian theme.
+*/
+
+body .markdown-preview-view .tt-date-wrap {
+	position: relative !important;
+	margin: 1.15rem 0 0.18rem !important;
+	padding: 0 0 0 2.05rem !important;
+}
+
+body .markdown-preview-view .tt-date-wrap > h2 {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	font-family: var(--font-monospace) !important;
+	font-size: 1.02em !important;
+	font-weight: 400 !important;
+	line-height: 1.5 !important;
+	color: var(--text-normal) !important;
+}
+
+body .markdown-preview-view .tt-date-wrap > h2::before,
+body .markdown-preview-view .tt-date-wrap > h2::after {
+	display: none !important;
+}
+
+body .markdown-preview-view .tt-date-wrap::before {
+	content: "" !important;
+	position: absolute !important;
+	left: 0.52rem !important;
+	top: 0.58em !important;
+	width: 0.42rem !important;
+	height: 0.42rem !important;
+	border-radius: 50% !important;
+	background: var(--text-faint) !important;
+}
+
+body .markdown-preview-view .tt-tasks-wrap {
+	position: relative !important;
+	margin: 0 0 1.1rem !important;
+	padding: 0 0 0 2.85rem !important;
+}
+
+body .markdown-preview-view .tt-tasks-wrap::before {
+	content: "" !important;
+	position: absolute !important;
+	left: 0.72rem !important;
+	top: 0.02rem !important;
+	bottom: 0.45rem !important;
+	width: 1px !important;
+	background: var(--background-modifier-border) !important;
+}
+
+body .markdown-preview-view .tt-tasks-wrap > ul.contains-task-list {
+	margin: 0 !important;
+	padding-left: 0 !important;
+	border: 0 !important;
+}
+
+body .markdown-preview-view
+	.tt-tasks-wrap
+	> ul.contains-task-list
+	> li.task-list-item {
+	margin: 0.4rem 0 !important;
+	padding-left: 0 !important;
+	line-height: 1.55 !important;
+	list-style: none !important;
+}
+
+body .markdown-preview-view .tt-tasks-wrap li.task-list-item.is-checked {
+	color: var(--text-normal) !important;
+	text-decoration: none !important;
+}
+
+body .markdown-preview-view .tt-tasks-wrap .task-list-item-checkbox {
+	transform: scale(1.02);
+	margin-right: 0.5rem;
+}
+
+body .markdown-preview-view .tt-tasks-wrap ul ul,
+body .markdown-preview-view .tt-tasks-wrap ol ol,
+body .markdown-preview-view .tt-tasks-wrap ul ol,
+body .markdown-preview-view .tt-tasks-wrap ol ul {
+	border-left: none !important;
+	border-inline-start: none !important;
+}
+
+/* Keep Live Preview stable; only remove the completed-task strike-through. */
+body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] {
+	text-decoration: none !important;
+}

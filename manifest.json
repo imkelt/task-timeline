@@ -1,0 +1,9 @@
+{
+  "id": "task-timeline",
+  "name": "Task Timeline",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Automatically moves completed checklist items from a to-do note into a dated completion timeline.",
+  "author": "Tony",
+  "isDesktopOnly": false
+}
